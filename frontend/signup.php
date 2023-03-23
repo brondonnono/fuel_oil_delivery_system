@@ -1,7 +1,6 @@
 <?php
-	session_start();
+	require_once('../backend/connection.php');
 	if (!isset($_SESSION['username'])) {
-    	require_once('../backend/connection.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

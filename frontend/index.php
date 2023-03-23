@@ -1,12 +1,13 @@
 <?php
     require_once('../backend/connection.php');
+    // session_start();
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]--> <html lang="en" class="ie8"> <!--[endif]-->
 <!--[if !IE]--> <html lang="en"> <!--[endif]-->
     <head>
         <meta charset="utf-8">
-        <title>DELIVERY - Free HTML Bootstrap Template</title>
+        <title>DELIVERY - SYSTEM</title>
         <!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
        <!-- Custom Fonts--> 
@@ -70,7 +71,7 @@
                         ?>
                         <li></li>
                         <li></li>
-                        <li><a href="#"><span class="fa fa-sign-out" style="color: red !important;">Logout</span></a></li>
+                        <li><a href="../backend/logout.php" name="logout"><span class="fa fa-sign-out" style="color: red !important;">Logout</span></a></li>
                         <?php
                             } else {
                                 echo "not logged in";

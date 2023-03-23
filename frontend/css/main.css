@@ -498,7 +498,9 @@ input.input100 {
 }
 
 .login100-form-btn:hover {
-  background: #333333;
+  background: transparent;
+  color:#ffcb0f;
+  border:1px solid #ffcb0f;
 }
 
 

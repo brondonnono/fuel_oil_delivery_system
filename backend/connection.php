@@ -1,7 +1,7 @@
 <?php
+    session_start();
     try
     {
-        session_start();
         // Connection to mySQL SERVER
         $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
         $bdd = new PDO('mysql:host=localhost;dbname=fuel management system', 'root', '', $pdo_options);
