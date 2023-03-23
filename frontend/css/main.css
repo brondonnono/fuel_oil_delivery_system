@@ -500,6 +500,7 @@ input.input100 {
 .login100-form-btn:hover {
   background: transparent;
   color:#ffcb0f;
+  cursor: pointer;
   border:1px solid #ffcb0f;
 }
 

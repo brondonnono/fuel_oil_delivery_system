@@ -2,9 +2,9 @@
     session_start();
 	if (isset($_POST['login'])) {
         include('connection.php');
-        if (!empty($_POST['username']) && !empty($_POST['password'])) {
+        if (!empty(trim($_POST['username'])) && !empty(trim($_POST['password']))) {
             $username = $_POST['username'];
-            $password = $_POST['password'];
+            $password = sha1($_POST['password']);
             $sql = "SELECT * FROM `USER` WHERE `USERNAME`=? AND `PASSWORD`=?";
             $query = $bdd->prepare($sql);
             $query->execute(array($username, $password));
@@ -13,11 +13,8 @@
             $fetch = $query->fetch();
 
             if ($row == 1) {
-               echo "logged in";
-            //    session_register($username);
                $_SESSION['username'] = $username;
                $_SESSION['user_id'] = $fetch['USER_ID'];
-            //    $_SESSION['message'] = "Logged in successfully!";
                header("Location:../frontend/index.php");
                exit();
             } else {

@@ -69,19 +69,14 @@
                          <?php
                             if (isset($_SESSION['username'])) {
                         ?>
-                        <li></li>
-                        <li></li>
                         <li><a href="../backend/logout.php" name="logout"><span class="fa fa-sign-out" style="color: red !important;">Logout</span></a></li>
                         <?php
-                            } else {
-                                echo "not logged in";
                             }
                         ?>
                     </ul>			
                 </div>
             </div> 
 
-              
             <nav class="navbar bootsnav">
                  
                 <div class="top-search">
@@ -116,6 +111,8 @@
                             <li><a href="#services">Services</a></li>
                             <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#contact_form">Contact Us</a></li>
+                            <li><a href="./login.php" class="btn btn-info">Sign in</a></li>
+                            <li><a href="./signup.php" class="btn btn-warning">Sign up</a></li>
                         </ul>
                     </div>
                 </div>   

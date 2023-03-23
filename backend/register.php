@@ -19,28 +19,43 @@
             $fetch = $query->fetch();
 
             if ($row > 0) {
-               echo "This username is already used";
-            //    header("Location:../frontend/signup.php");
+               $_SESSION['message'] = "This username is already used!";
+               header("Location:../frontend/signup.php");
                exit;
             } else {
                 
                 // writing sql request to check if another customer don't have the same name or phone
-                $sql = "SELECT * FROM `CUSTOMER` WHERE `CUSTOMER_TEL` = ? OR `CUSTOMER_NAME` = ?";
+                $sql = "SELECT * FROM `CUSTOMER` WHERE `CUSTOMER_TEL` = ?";
                 $query = $bdd->prepare($sql);
-                $query->execute(array($phone, $name));
+                $query->execute(array($phone));
                 $row = $query->rowCount();
 
                 if ($row > 0) {
-                    echo "This name or phone is already used";
-                    // header("Location:../frontend/signup.php");
+                    $_SESSION['message'] = "This phone number is already used!";
+                    header("Location:../frontend/signup.php");
                     exit;
                 } else {
-                    
-                    // writing sql request to check if another customer don't have the same name or phone
-                    $sql = "INSERT INTO `USER` VALUES (?,?,?)";
+
+                    // writing sql request to check if the username is already used
+                    $sql = "SELECT * FROM `CUSTOMER` WHERE `CUSTOMER_NAME` = ?";
                     $query = $bdd->prepare($sql);
-                    $query->execute(array(0,$username, $password));
-                    header("Location:../frontend/login.php");
+                    $query->execute(array($name));
+                    $row = $query->rowCount();
+
+                    $fetch = $query->fetch();
+                    
+                    if ($row > 0) {
+                    $_SESSION['message'] = "This name is already used!";
+                    header("Location:../frontend/signup.php");
+                    exit;
+                    } else {
+                    
+                        // writing sql request to check if another customer don't have the same name or phone
+                        $sql = "INSERT INTO `USER` VALUES (?,?,?)";
+                        $query = $bdd->prepare($sql);
+                        $query->execute(array(0,$username, $password));
+                        header("Location:../frontend/login.php");
+                    }
                 }
             }
         } else {

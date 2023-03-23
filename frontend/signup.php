@@ -37,6 +37,25 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form login100-form-signup validate-form" method="POST" action="../backend/register.php">
+					
+					<?php
+						if (isset($_SESSION['message'])) {
+					?>
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<?php
+							echo $_SESSION['message'];
+							unset($_SESSION['message']);
+						?>
+						<button type="button" class="close" data-dismiss="alert" arial-label="close">
+							<span arai-hidden="true">&times;</span>
+						</button>
+					</div>
+					<?php
+						}
+					?>
+					<a href="./index.php">
+						<span class="fa fa-home" style=" font-size: x-large; color: #ffcb0f;"></span>
+					</a>
 					<span class="login100-form-title p-b-20">
 						Create your account
 					</span>

@@ -6,7 +6,7 @@
 <html lang="en">
 
 <head>
-	<title>DELIVERY - Sign in</title>
+	<title>DELIVERY - Forgot password</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -55,44 +55,23 @@
 					<?php
 						}
 					?>
-					<a href="./index.php">
-						<span class="fa fa-home" style=" font-size: x-large; color: #ffcb0f;"></span>
-					</a>
 					<span class="login100-form-title p-b-43">
-						Login to continue
+						Reset password
 					</span>
 
+					<h5 class="p-b-15 text-justify">
+					Enter your phone number, if an account exist with this number we will send you a password reset code
+					</h5>
 
-					<div class="wrap-input100 validate-input" data-validate="Username is required">
-						<input class="input100" type="text" name="username">
+					<div class="wrap-input100 validate-input" data-validate="Phone number is required">
+						<input class="input100" type="text" name="phone">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Username</span>
-					</div>
-
-
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password">
-						<span class="focus-input100"></span>
-						<span class="label-input100">Password</span>
-					</div>
-
-					<div class="flex-sb-m w-full p-t-3 p-b-32">
-						<div class="contact100-form-checkbox">
-							<a href="./signup.php" class="txt1">
-								Don't have an account?
-							</a>
-						</div>
-
-						<div>
-							<a href="/forgot.php" class="txt1">
-								Forgot Password?
-							</a>
-						</div>
+						<span class="label-input100">Phone number</span>
 					</div>
 
 
 					<div class="container-login100-form-btn">
-						<input class="login100-form-btn" name="login" value="Login" type="submit">
+						<input class="login100-form-btn" name="forgot" value="send" type="submit">
 					</div>
 
 				</form>
