@@ -14,7 +14,7 @@
         $query = $bdd->prepare($sql);
         $query->execute(array($password, $phone));
         $fetch = $query->fetch();
-
+        unset($_SESSION['phone']);
         $_SESSION['message'] = "Password changed successfully!";
         $_SESSION['msg_type'] = "success";
         header("Location:../frontend/login.php");
