@@ -74,6 +74,12 @@
 						<span class="label-input100">Password</span>
 					</div>
 
+					<div class="wrap-input100 validate-input" data-validate="Repeated password is required">
+						<input class="input100" type="password" name="Cpassword">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Repeat your password</span>
+					</div>
+
 					<div class="wrap-input100 validate-input" data-validate = "Your name is required">
 						<input class="input100" type="text" name="name">
 						<span class="focus-input100"></span>
