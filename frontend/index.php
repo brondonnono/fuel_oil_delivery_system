@@ -53,57 +53,25 @@
                         <li><a href=""><span class="fa fa-dribbble"></span></a></li>
                         <li><a href=""><span class="fa fa-linkedin"></span></a></li>
                         <li><a href=""><span class="fa fa-youtube"></span></a></li>
-                         <?php
+                        <?php
                             if (isset($_SESSION['username'])) {
                         ?>
                         <li><a href="../backend/logout.php" name="logout"><span class="fa fa-sign-out" style="color: red !important;">Logout</span></a></li>
                         <?php
+                                if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'agent') {
+                        ?>
+                        <li><a href="../frontend/dashboard/index.php" name="admin"><span class="fa fa-dashboard"></span></a></li>
+                        <?php
+                                }
                             }
                         ?>
                     </ul>			
                 </div>
             </div> 
 
-            <nav class="navbar bootsnav">
-                 
-                <div class="top-search">
-                    <div class="container">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search">
-                            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container">
-                     
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        </ul>
-                    </div>
-                     
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href=""><img class="logo" src="images/logo.png" alt=""></a>
-                    </div>
-                      
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-                        <ul class="nav navbar-nav menu">
-                            <li><a href="">Home</a></li>                    
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#contact_form">Contact Us</a></li>
-                            <li><a href="./login.php" class="btn btn-info">Sign in</a></li>
-                            <li><a href="./signup.php" class="btn btn-warning">Sign up</a></li>
-                        </ul>
-                    </div>
-                </div>   
-            </nav> 
+            <?php
+                include('./partials/nav_menu.php');
+            ?>
         </header> 
 
 
@@ -398,74 +366,9 @@
         <!-- Footer -->
         <footer>
             <!-- Footer top -->
-            <div class="container footer_top">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-7">
-                        <div class="footer_item">
-                            <h4>About Company</h4>
-                            <img class="logo" src="images/logo.png" alt="Construction" />
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem</p>
-
-                            <ul class="list-inline footer_social_icon">
-                                <li><a href=""><span class="fa fa-facebook"></span></a></li>
-                                <li><a href=""><span class="fa fa-twitter"></span></a></li>
-                                <li><a href=""><span class="fa fa-youtube"></span></a></li>
-                                <li><a href=""><span class="fa fa-google-plus"></span></a></li>
-                                <li><a href=""><span class="fa fa-linkedin"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--<div class="col-lg-2 col-sm-5">
-                        <div class="footer_item">
-                            <h4>Explore link</h4>
-                            <ul class="list-unstyled footer_menu">
-                                <li><a href=""><span class="fa fa-play"></span> Our services</a>
-                                <li><a href=""><span class="fa fa-play"></span> Meet our team</a>
-                                <li><a href=""><span class="fa fa-play"></span> Forum</a>
-                                <li><a href=""><span class="fa fa-play"></span> Help center</a>
-                                <li><a href=""><span class="fa fa-play"></span> Contact Cekas</a>
-                                <li><a href=""><span class="fa fa-play"></span> Privacy Policy</a>
-                                <li><a href=""><span class="fa fa-play"></span> Cekas terms</a>
-                                <li><a href=""><span class="fa fa-play"></span> Site map</a>
-                            </ul>
-                        </div>
-                    </div>-->
-                    <!--<div class="col-lg-3 col-sm-7">
-                        <div class="footer_item">
-                            <h4>Latest post</h4>
-                            <ul class="list-unstyled post">
-                                <li><a href=""><span class="date">20 <small>AUG</small></span>  Luptatum omittantur duo ne mpetus indoctum</a></li>
-                                <li><a href=""><span class="date">20 <small>AUG</small></span>  Luptatum omittantur duo ne mpetus indoctum</a></li>
-                                <li><a href=""><span class="date">20 <small>AUG</small></span>  Luptatum omittantur duo ne mpetus indoctum</a></li>
-                                <li><a href=""><span class="date">20 <small>AUG</small></span>  Luptatum omittantur duo ne mpetus indoctum</a></li>
-                            </ul>
-                        </div>
-                    </div>-->
-                    <div class="col-lg-3 col-sm-5">
-                        <div class="footer_item">
-                            <h4>Contact us</h4>
-                            <ul class="list-unstyled footer_contact">
-                                <li><a href=""><span class="fa fa-map-marker"></span> Nkolbissong, yaounde</a></li>
-                                <li><a href=""><span class="fa fa-map-marker"></span> Odza, yaounde</a></li>
-                                <li><a href=""><span class="fa fa-map-marker"></span> Olembe, yaounde</a></li>
-                                <li><a href=""><span class="fa fa-envelope"></span> tahfrancis99@gmail.com</a></li>
-                                <li><a href=""><span class="fa fa-mobile"></span><p>+237 678990464 <br />+237 681059688</p></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div> <!--Footer top end--> 
-
-             <!--Footer bottom -->
-            <div class="footer_bottom text-center">
-                <!--<p class="wow fadeInRight">
-                    Made with 
-                    <i class="fa fa-heart"></i>
-                    by 
-                    <a target="_blank" href="http://bootstrapthemes.co">Bootstrap Themes</a> 
-                    2016. All Rights Reserved
-                </p>-->
-            </div> <!--Footer bottom end -->
+            <?php
+                include('./partials/footer.php');
+            ?>
         </footer> <!--Footer end -->
 
          <!--JavaScript -->

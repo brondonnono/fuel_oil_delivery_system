@@ -12,6 +12,7 @@
                 $_SESSION['phone'] = $phone;
                 $_SESSION['message'] = 'You will receive a password reset code on that phone number';
                 $_SESSION['msg_type'] = 'info';
+                // send the reset code before going on resetPassword
                 header("Location:../frontend/resetPassword.php");
                 exit();
             } else {
