@@ -53,17 +53,46 @@
 					
 					<?php
 						if (isset($_SESSION['message'])) {
+							if ($_SESSION['msg_type'] == 'danger') {
 					?>
 					<div class="alert alert-danger alert-dismissible fade show" role="alert">
 						<?php
 							echo $_SESSION['message'];
 							unset($_SESSION['message']);
+							unset($_SESSION['msg_type']);
 						?>
 						<button type="button" class="close" data-dismiss="alert" arial-label="close">
 							<span arai-hidden="true">&times;</span>
 						</button>
 					</div>
 					<?php
+							} else if($_SESSION['msg_type'] == 'success') {
+					?>
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+						<?php
+							echo $_SESSION['message'];
+							unset($_SESSION['message']);
+							unset($_SESSION['msg_type']);
+						?>
+						<button type="button" class="close" data-dismiss="alert" arial-label="close">
+							<span arai-hidden="true">&times;</span>
+						</button>
+					</div>
+					<?php
+							} else if($_SESSION['msg_type'] == 'info') {
+					?>
+					<div class="alert alert-info alert-dismissible fade show" role="alert">
+						<?php
+							echo $_SESSION['message'];
+							unset($_SESSION['message']);
+							unset($_SESSION['msg_type']);
+						?>
+						<button type="button" class="close" data-dismiss="alert" arial-label="close">
+							<span arai-hidden="true">&times;</span>
+						</button>
+					</div>
+					<?php
+							}
 						}
 					?>
 					<a href="./index.php">

@@ -1,7 +1,7 @@
 <?php
     session_start();
 	if (isset($_POST['login'])) {
-        include('connection.php');
+        include('./connection.php');
         if (!empty(trim($_POST['username'])) && !empty(trim($_POST['password']))) {
             $username = $_POST['username'];
             $password = sha1($_POST['password']);
@@ -20,11 +20,13 @@
             } else {
                 echo "<script> alert('Invalid username or password');</script>";
                 $_SESSION['message'] = "Invalid username or password";
+                $_SESSION['msg_type'] = "danger";
                 header("Location:../frontend/login.php");
             }
         } else {
             echo "<script> alert('Please complete the required field!');</script>";
             $_SESSION['message'] = "Please complete the required field";
+            $_SESSION['msg_type'] = "danger";
             header("Location: ../frontend/login.php");
         }
     }

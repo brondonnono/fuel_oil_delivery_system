@@ -22,6 +22,7 @@
 
                 if ($row > 0) {
                     $_SESSION['message'] = "This username is already used!";
+                    $_SESSION['msg_type'] = "danger";
                     header("Location:../frontend/signup.php");
                     exit;
                 } else {
@@ -34,6 +35,7 @@
 
                     if ($row > 0) {
                         $_SESSION['message'] = "This phone number is already used!";
+                        $_SESSION['msg_type'] = "danger";
                         header("Location:../frontend/signup.php");
                         exit;
                     } else {
@@ -48,15 +50,17 @@
                         
                         if ($row > 0) {
                         $_SESSION['message'] = "This name is already used!";
+                        $_SESSION['msg_type'] = "danger";
                         header("Location:../frontend/signup.php");
                         exit;
                         } else {
                         
                             // writing sql request to check if another customer don't have the same name or phone
-                            $sql = "INSERT INTO `USER` VALUES (?,?,?,?,?)";
+                            $sql = "INSERT INTO `USER` VALUES (?,?,?,?,?,?)";
                             $query = $bdd->prepare($sql);
-                            $query->execute(array(0,$username, $password, $name, $tel));
+                            $query->execute(array(0,$username, $password, $name, $phone, $address));
                             $_SESSION['message'] = "Account created!";
+                            $_SESSION['msg_type'] = "success";
 
                             header("Location:../frontend/login.php");
                         }
@@ -64,10 +68,12 @@
                 }
             } else {
                 $_SESSION['message'] = "The two password are not the same";
+                $_SESSION['msg_type'] = "danger";
                 header("Location:../frontend/signup.php");
             }
         } else {
             $_SESSION['message'] = "Please complete the required field!";
+            $_SESSION['msg_type'] = "danger";
             header("Location:../frontend/signup.php");
         }
     }
