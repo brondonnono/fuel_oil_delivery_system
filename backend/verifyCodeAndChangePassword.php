@@ -10,7 +10,7 @@
     else if (isset($_POST['change']) and isset($_SESSION['phone'])) {
         $password = sha1($_POST['password']);
         $phone = $_SESSION['phone'];
-        $sql = "UPDATE TABLE `USER` SET `password`= ? WHERE `USER_TEL`= ?";
+        $sql = "UPDATE `USER` SET `password`= ? WHERE `USER_TEL`= ?";
         $query = $bdd->prepare($sql);
         $query->execute(array($password, $phone));
         $fetch = $query->fetch();
