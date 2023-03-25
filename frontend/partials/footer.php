@@ -3,7 +3,7 @@
         <div class="col-lg-8 col-sm-7">
             <div class="footer_item">
                 <h4>About Company</h4>
-                <img class="logo" src="images/logo.png" alt="Construction" />
+                <img class="logo" src="images/logo.jpg" alt="Construction" />
                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
                     magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem</p>
 
