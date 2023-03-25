@@ -29,12 +29,25 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" media="screen" />	
+	<!-- Custom stylesheet--> 
+	<link rel="stylesheet" href="css/custom.css" />
 
 	<!--===============================================================================================-->
 </head>
 
 <body style="background-color: #666666;">
+
+	<!--Preloader--> 
+
+	<?php
+		include('./preloader.php');
+	?>
+
+	<!---End off Preloader-->
 
 	<div class="limiter">
 		<div class="container-login100">
@@ -118,6 +131,11 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
 	<script src="js/main2.js"></script>
+	<!--JavaScript -->
+	<script src="js/jquery-1.12.1.min.js"></script>
+	<!-- JS Implementing Plugins-->
+	<script src="js/jquery.fancybox.js?v=2.1.5"></script>
+	<script src="js/main.js"></script>
 
 </body>
 
