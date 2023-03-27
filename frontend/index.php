@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="css/font-awesome.min.css" />
         <!-- Bootsnav--> 
         <link rel="stylesheet" href="css/bootsnav.css">
+        <link rel="shortcut icon" href="images/logo.jpg">
         <!-- Fancybox -->
         <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" media="screen" />	
         <!-- Custom stylesheet--> 
